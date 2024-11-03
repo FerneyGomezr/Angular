@@ -1,0 +1,13 @@
+<input type="number" [(ngModel)]="dia" placeholder="Ingrese el número de día" class="form-control mt-4  form-espacio">
+<button class="btn btn-primary mt-2 mb-4  form-espacio" (click)="dia = dia">Calcular</button>
+
+<div [ngSwitch]="dia">
+  <span *ngSwitchCase="1">Lunes</span>
+  <span *ngSwitchCase="2">Martes</span>
+  <span *ngSwitchCase="3">Miércoles</span>
+  <span *ngSwitchCase="4">Jueves</span>
+  <span *ngSwitchCase="5">Viernes</span>
+  <span *ngSwitchCase="6">Sábado</span>
+  <span *ngSwitchCase="7">Domingo</span>
+  <span *ngSwitchDefault>No hay día</span>
+</div>

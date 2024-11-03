@@ -1,0 +1,41 @@
+
+<div class="card margen">
+ 
+    <div class="card-body">
+    <form (ngSubmit)="procesar()" #formContact="ngForm">
+
+        <div class="mb-2">
+            <label class="form-label">
+                Nombre:
+            </label>
+            <input type="text"  name="nombre" class="form-control" placeholder="por favor ingrese su nombre" [(ngModel)]="persona.nombre" required  #name="ngModel">
+        <!-- esta clase alert es para mostrar las alertas de requerido con el campo valid del input  name-->
+            <div class="alert alert-danger mt-2" [hidden]="name.valid || name.pristine">
+                El nombre es obligatorio
+            </div>
+        </div>
+        <div>
+              <label class="form-label">
+                Edad:
+              </label>
+              <input type="number" name="edad" placeholder="Ingrese su edad" class="mt-2 form-control" [(ngModel)]="persona.edad"  required #edad="ngModel">
+              <div class="alert alert-danger  mt-2" [hidden]="edad.valid || edad.pristine">  el campo  edad es obligatorio</div>
+        </div>
+        <!--button class="btn btn-primary mt-2"  [disabled]="name.invalid || edad.invalid"> enviar </!--button-->
+        <button class="btn btn-primary mt-2"  [disabled]="formContact.invalid"> enviar </button>
+
+    </form>
+    </div>
+ 
+</div>
+
+{{formContact.valid}}
+{{name.errors | json }}
+
+
+<!-- {{persona | json }}     
+{{edad.errors | json }}   -->
+
+
+
+<div> buen dia señor {{persona.nombre}} su edad es {{persona.edad}}</div>

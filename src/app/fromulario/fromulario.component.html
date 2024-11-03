@@ -1,1 +1,7 @@
 <p>fromulario works!</p>
+<div>
+
+    <li *ngFor ="let persona of personas; let i=index ">
+      {{i}} - {{persona.nombre + ' '+ persona.edad}}
+    </li>
+</div>
